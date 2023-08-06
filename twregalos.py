@@ -45,7 +45,7 @@ class Bot(commands.Bot):
 
     async def send_messages(self):
         # Enviar mensajes predeterminados y de la base de datos en intervalos regulares
-        channel = "nglmercer"
+        channel = "STREAMCANAL"
         while True:
             # Obtener una muestra aleatoria de los mensajes de la base de datos
             self.cursor.execute('SELECT message FROM messages WHERE message IS NOT NULL AND message != "" ORDER BY RANDOM() LIMIT 1')
@@ -57,8 +57,8 @@ class Bot(commands.Bot):
 
 if __name__ == '__main__':
     # Configurar y ejecutar el bot
-    token = 'oauth:spn0gho8t1x65pxnhpo97xlxtat5ps'
+    token = 'TOKENTMITWICH'
     prefix = ''
-    initial_channels = ['nglmercer']
+    initial_channels = ['STREAMCANAL']
     bot = Bot(token, prefix, initial_channels)
     bot.run()
