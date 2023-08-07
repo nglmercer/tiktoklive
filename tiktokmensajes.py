@@ -60,8 +60,6 @@ async def on_tiktok_comment(event: CommentEvent):
 @client.on("gift")
 async def on_gift(event: GiftEvent):
     message = f"{event.gift.info.name} " 
-    with open("regalos.txt", "a") as file:
-        file.write(message + "\n")   
     print(f"{event.gift.info.name} " )
     cursor.execute("INSERT INTO messages (channel, message) VALUES (?, ?)", ("tiktok", message ))
     db.commit()
